@@ -1,0 +1,8 @@
+.icon {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.read {
+  color: #53bdeb;
+}

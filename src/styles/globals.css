@@ -1,0 +1,171 @@
+/* ─── Reset & Base ─────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+}
+
+/* ─── Theme: Dark (default) ───────────────────────────────── */
+:root,
+[data-theme='dark'] {
+  /* App shell */
+  --bg-app: #111b21;
+  --bg-sidebar: #111b21;
+  --bg-sidebar-header: #202c33;
+  --bg-chat: #0b141a;
+  --bg-chat-header: #202c33;
+  --bg-input: #2a3942;
+  --bg-input-field: #2a3942;
+  --bg-message-sent: #005c4b;
+  --bg-message-received: #202c33;
+  --bg-hover: #2a3942;
+  --bg-active: #2a3942;
+  --bg-search: #2a3942;
+  --bg-badge: #00a884;
+  --bg-tooltip: #182229;
+  --bg-context-menu: #233138;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Text */
+  --text-primary: #e9edef;
+  --text-secondary: #8696a0;
+  --text-tertiary: #667781;
+  --text-link: #53bdeb;
+  --text-sent: #d9fdd3;
+  --text-badge: #111b21;
+  --text-placeholder: #667781;
+  --text-timestamp: #8696a0;
+  --text-green: #00a884;
+  --text-header: #e9edef;
+
+  /* Borders */
+  --border-color: #2a3942;
+  --border-light: #182229;
+  --border-input: transparent;
+
+  /* Icons */
+  --icon-primary: #aebac1;
+  --icon-secondary: #8696a0;
+  --icon-green: #00a884;
+
+  /* WhatsApp pattern */
+  --chat-pattern-opacity: 0.06;
+  --chat-pattern-color: #e9edef;
+
+  /* Misc */
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: #374045;
+  --shadow-message: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+  --shadow-elevated: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  /* Radius */
+  --radius-message: 7.5px;
+  --radius-bubble-tail: 0px 7.5px 7.5px 7.5px;
+  --radius-bubble-tail-sent: 7.5px 0px 7.5px 7.5px;
+}
+
+/* ─── Theme: Light ────────────────────────────────────────── */
+[data-theme='light'] {
+  --bg-app: #f0f2f5;
+  --bg-sidebar: #ffffff;
+  --bg-sidebar-header: #f0f2f5;
+  --bg-chat: #efeae2;
+  --bg-chat-header: #f0f2f5;
+  --bg-input: #f0f2f5;
+  --bg-input-field: #ffffff;
+  --bg-message-sent: #d9fdd3;
+  --bg-message-received: #ffffff;
+  --bg-hover: #f5f6f6;
+  --bg-active: #f0f2f5;
+  --bg-search: #f0f2f5;
+  --bg-badge: #25d366;
+  --bg-tooltip: #e9edef;
+  --bg-context-menu: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+
+  --text-primary: #111b21;
+  --text-secondary: #667781;
+  --text-tertiary: #8696a0;
+  --text-link: #027eb5;
+  --text-sent: #111b21;
+  --text-badge: #ffffff;
+  --text-placeholder: #8696a0;
+  --text-timestamp: #667781;
+  --text-green: #008069;
+  --text-header: #111b21;
+
+  --border-color: #e9edef;
+  --border-light: #f0f2f5;
+  --border-input: transparent;
+
+  --icon-primary: #54656f;
+  --icon-secondary: #8696a0;
+  --icon-green: #008069;
+
+  --chat-pattern-opacity: 0.05;
+  --chat-pattern-color: #111b21;
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb: #c4ccd0;
+  --shadow-message: 0 1px 0.5px rgba(11, 20, 26, 0.13);
+  --shadow-elevated: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  --radius-message: 7.5px;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* ─── Utilities ───────────────────────────────────────────── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,114 @@
+.wrapper {
+  display: flex;
+  padding: 1px 6%;
+}
+
+.wrapper + .wrapper {
+  padding-top: 0;
+}
+
+/* Alignment */
+.sent {
+  justify-content: flex-end;
+}
+
+.received {
+  justify-content: flex-start;
+}
+
+/* Spacing between groups */
+.firstInGroup {
+  padding-top: 6px;
+}
+
+.lastInGroup {
+  padding-bottom: 6px;
+}
+
+/* Bubble */
+.bubble {
+  position: relative;
+  max-width: 65%;
+  min-width: 80px;
+  padding: 6px 10px 8px;
+  border-radius: var(--radius-message);
+  box-shadow: var(--shadow-message);
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Sent bubble */
+.bubbleSent {
+  background-color: var(--bg-message-sent);
+  border-top-right-radius: 2px;
+}
+
+.sent.firstInGroup .bubbleSent {
+  border-top-right-radius: 0;
+}
+
+.sent.firstInGroup .bubbleSent::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--bg-message-sent);
+  border-top: 8px solid transparent;
+}
+
+/* Received bubble */
+.bubbleReceived {
+  background-color: var(--bg-message-received);
+  border-top-left-radius: 2px;
+}
+
+.received.firstInGroup .bubbleReceived {
+  border-top-left-radius: 0;
+}
+
+.received.firstInGroup .bubbleReceived::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 0;
+  height: 0;
+  border-right: 8px solid var(--bg-message-received);
+  border-top: 8px solid transparent;
+}
+
+/* Text */
+.text {
+  font-size: 14.2px;
+  line-height: 19px;
+  color: var(--text-primary);
+  display: block;
+  padding-right: 52px;
+}
+
+/* Meta row */
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  float: right;
+  margin-top: -14px;
+  margin-left: 4px;
+  position: relative;
+}
+
+.time {
+  font-size: 11px;
+  color: var(--text-timestamp);
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+/* Long messages: let meta sit below */
+@media (max-width: 480px) {
+  .bubble {
+    max-width: 85%;
+  }
+}

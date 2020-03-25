@@ -1,0 +1,65 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 280px;
+  max-width: 420px;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* ─── Main area ───────────────────────────────────────────── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    border-right: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    transition: transform 0.2s ease;
+  }
+
+  .main {
+    position: absolute;
+    inset: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .mobileHide {
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  .main.mobileHide {
+    transform: translateX(100%);
+  }
+}
